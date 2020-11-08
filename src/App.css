@@ -44,6 +44,9 @@
 .card-text h2 {
   text-align: center;
 }
+.card-text h3 {
+  text-align: center;
+}
 .card-button {
   grid-area: stats;
 }
@@ -231,4 +234,18 @@
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+}
+
+.message-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 300px;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(110, 110, 110, 0.315);
+  text-align: center;
+  height: 180px;
+  width: 300px;
 }
