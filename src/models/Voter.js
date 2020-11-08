@@ -34,6 +34,8 @@ export class Voter extends Resource {
         return Voter.read(session.loggedInUserId)
     }
 
-    
+    yell(){
+        console.log("I am yelling")
+    }
 
 }
