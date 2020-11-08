@@ -20,6 +20,7 @@
     "@triframe/designer": "^0.6.1",
     "@triframe/mason": "^0.2.3",
     "babel-preset-triframe": "^0.0.5",
+    "prettier": "2.1.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "^3.4.3"
