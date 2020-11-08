@@ -5,7 +5,6 @@ import { Voter} from './views/Voter'
 import { Login } from './views/Login';
 import "./App.css"
 
-
 export default () => (
     <Provider url={process.env.REACT_APP_BACKEND_URL}>
         <Route exact path="/vote" component={Vote} />

@@ -1,29 +1,9 @@
 import { Resource } from '@triframe/core'
-import { compare } from 'bcrypt';
-import { include, Model, string, integer, hasMany, session} from '@triframe/scribe'
+import { compare, hash } from 'bcrypt';
+import { include, Model, string, integer, hasMany, session, stream } from '@triframe/scribe'
 
 export class Voter extends Resource {
     @include(Model)
-
-    @string firstName = ""
-    @string lastName = ""
-    @integer votersNumber = 0
-    @string passwordDigest= ""
-
-    @session
-    static async login( session, votersNumber, password) {
-        let [ voter ] = await Voter.where({votersNumber: votersNumber});
-
-        if (voter == undefined) {
-            throw Error(`Could not find user with that voter's number`);
-        }
-
-        if (!await compare(password, voter.passwordDigest)) {
-            throw Error(`Incorrect Password`);
-        }
-        session.loggedInUserId = voter.id 
-        return true
-    }
 
     @hasMany
     votes = []
@@ -34,27 +14,43 @@ export class Voter extends Resource {
     @string
     lastname = ""
 
-    
+    @integer
+    votersNumber = 0
 
     @string
-    password = ""
+    passwordDigest = ""
 
     @string
     username = ""
 
-    @session
-    static async login(session, inputUsername){
-        let [voter] = await Voter.where({username: inputUsername})
 
-        session.loggedInUserId = voter.id
-        return null
+    static async register(firstname, lastname, votersNumber){
+        let passwordDigest = await hash('123', 10)
+        return Voter.create({ firstname: firstname, passwordDigest: passwordDigest, lastname: lastname, votersNumber:votersNumber })
     }
-
-    @session
-    static current(session){
-        return Voter.read(session.loggedInUserId)
-    }
-
     
+    @session
+    static async login( session, firstname, password) {
+        let [ voter ] = await Voter.where({firstname: firstname});
 
+        if (voter == undefined) {
+            throw Error(`Could not find user with that name`);
+        }
+
+        if (!await compare(password, voter.passwordDigest)) {
+            throw Error(`Incorrect Password`);
+        }
+        session.loggedInUserId = voter.id 
+        return true
+    }
+
+    @session
+    @stream
+    static *current(session){
+        return (
+            session.loggedInUserId !== null
+                ? yield Voter.read(session.loggedInUserId)
+                : null
+        )
+    }
 }

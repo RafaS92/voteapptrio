@@ -1,15 +1,13 @@
 import React from 'react';
 import { tether, Heading, TextInput, Container, PasswordInput, Button, HelperText } from '@triframe/designer';
-import { Voter } from './Voter';
-
 
 export const Login = tether(function*({ Api, redirect }){
 
     const { Voter } = Api;
 
     const form = yield {
-        firstName: '',
-        lastName:  '',
+        firstname: '',
+        lastname:  '',
         votersNumber: '',
         password: '',
         errorMessage: null,
@@ -20,14 +18,14 @@ export const Login = tether(function*({ Api, redirect }){
             <Heading>Login To Vote</Heading>
             <TextInput 
                 label="First Name"
-                value={FormData.firstName}
-                onChange={value => form.firstName = value}
+                value={FormData.firstname}
+                onChange={value => form.firstname = value}
             />
 
             <TextInput 
                 label="Last Name"
-                value={FormData.lastName}
-                onChange={value => form.lastName = value}
+                value={FormData.lastname}
+                onChange={value => form.lastname = value}
             />
 
             <TextInput 
@@ -44,7 +42,8 @@ export const Login = tether(function*({ Api, redirect }){
 
             <Button onPress={async () => {
                 try{
-                    await Voter.login(form.votersNumber, form.password)
+                    await Voter.login(form.firstname, form.password)
+                    redirect('/welcome')
                 }catch(error){
                     form.errorMessage = error.message;
                 }
