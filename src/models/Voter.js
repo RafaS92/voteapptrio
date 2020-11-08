@@ -7,7 +7,7 @@ export class Voter extends Resource {
     @string firstName = ""
     @string lastName = ""
     @integer votersNumber = 0
-    @string password= ""
+    @string passwordDigest= ""
 
 }
 
