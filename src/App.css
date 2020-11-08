@@ -1,3 +1,5 @@
+/* candidates */
+
 .wrapper {
   background-color: rgb(179, 177, 177);
 }
@@ -13,11 +15,6 @@
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
 }
-
-/* .card {
-  width: 300px;
-  margin-top: 150px;
-} */
 
 .card {
   display: grid;
@@ -114,4 +111,39 @@
 .vote-title {
   position: absolute;
   left: 90px;
+}
+
+/* login */
+
+.login-wrapper {
+  background-image: url("https://styledme.com/wp-content/uploads/2020/09/vote-zoom-background.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  margin-top: 0px;
+}
+
+.login-image {
+  display: flex;
+  width: 70%;
+  height: 330px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-container {
+  width: 330px;
+  height: 280px;
+  background-color: rgba(255, 255, 255, 0.74);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 400px;
+  border: 2px solid #000000;
+  padding: 5px;
+}
+
+.login-form-head {
+  display: flex;
+  justify-content: center;
 }

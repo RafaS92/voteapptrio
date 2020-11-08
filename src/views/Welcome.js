@@ -12,6 +12,8 @@ export const Welcome = tether(function*({Api, redirect}){
     }
 
   return(
+
+    
       <Container>
           <Heading>Hello! Would you like to vote in this current election?</Heading>
           <Button onPress={async () => {
