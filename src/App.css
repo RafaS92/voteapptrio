@@ -1,4 +1,7 @@
 /* candidates */
+* {
+  scroll-behavior: smooth;
+}
 
 .wrapper {
   background-color: rgb(179, 177, 177);
@@ -148,4 +151,84 @@
 .login-form-head {
   display: flex;
   justify-content: center;
+}
+
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(243, 243, 243);
+  width: 86.6%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 1050px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+.welcome-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #0ba6c5;
+}
+
+.welcome-image {
+  height: 400px;
+  width: 300px;
+}
+
+.welcome-text {
+  font-size: 20px;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+}
+
+.question-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 0px;
+}
+
+.result-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: 2px solid #000000;
+  width: 300px;
+  margin-bottom: 30px;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(250, 58, 44, 0.432);
+  border-radius: 25px;
+}
+
+.result-container h3 {
+  position: relative;
+  top: -15px;
+}
+
+.result-container strong {
+  position: relative;
+  top: -15px;
+}
+
+.image-top {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  height: 150px;
+  width: 250px;
+  border-radius: 100px;
+}
+
+.intro-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
