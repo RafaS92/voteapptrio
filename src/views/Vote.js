@@ -22,6 +22,7 @@ export const Vote = tether(function*(){
                     <div className="card-image"></div>
                         <div className="card-text">
                             <h2>Republicans</h2>
+                            <h3>Donald Trump</h3>
                             <p>The Republican Party is fighting for a freer and stronger America where everyone has the opportunity to achieve the American Dream.</p>
                         </div>
                     <div className="card-button">
@@ -39,6 +40,7 @@ export const Vote = tether(function*(){
                     <div className="card-image2"></div>
                         <div className="card-text">
                             <h2>Democrats</h2>
+                            <h3>Joe Biden</h3>
                             <p>We are fighting for a better, fairer, and brighter future for every American: rolling up our sleeves, empowering grassroots voters, and organizing everywhere to take our country back.</p>
                         </div>
                     <div className="card-button2">
