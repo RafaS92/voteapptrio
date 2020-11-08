@@ -1,47 +1,60 @@
 import React from 'react'
-import { tether, Container, Heading, Area ,Card, Avatar, Paragraph } from '@triframe/designer'
+import { tether, Container, Heading, Area ,Card, Avatar, Paragraph,Button } from '@triframe/designer'
 
 export const Vote = tether(function*(){
 
 
-    const state = yield {
-        voter: " ",
-        candidate: " ",
-        year: 0
-
-    }
+  
 
 
     return (
-        <Container>
-            <Heading>Vote</Heading>
-            <Area alignX="left" alingY="center"  >
-                <Card>
-                    <Heading>Alliance</Heading>
-                    <Avatar.Image  source="https://i.ytimg.com/vi/7_dwkjQHre0/maxresdefault.jpg" /> 
-                    <Paragraph>
-                    "It met all my criteria I wanted in an acceptance speech. The base is going to feel really good about it - to go vote and to take five people to the polls with them. It did what it was supposed to do. [in terms of swaying voters] It's up to the individual. Everybody has to do their own research."
-                    </Paragraph>
+        <div className="wrapper">
+            <img className="vote-image" src="https://www.ksat.com/resizer/4iS2CR0V4uPQT1Op9VlQNQnNj7E=/1280x720/smart/filters:format(jpeg):strip_exif(true):strip_icc(true):no_upscale(true):quality(65)/arc-anglerfish-arc2-prod-gmg.s3.amazonaws.com/public/MF6NTT4NW5E7ZICB2DK5KHIK6M.jpg" />
 
-                </Card>
+        
+        <Container >
+            <h1 className="vote-title">Select your candidate:</h1>
+            <div className="vote-container">
+               
+
+
+                <div className="card">
+                  <div className="card-image"></div>
+                    <div className="card-text">
+                        <h2>Republicans</h2>
+                        <p>The Republican Party is fighting for a freer and stronger America where everyone has the opportunity to achieve the American Dream.</p>
+                    </div>
+                  <div className="card-button">
+                    <div className="stat">
+                      
+                        <button color="white" className="button" >Vote</button>
+                      
+                    </div>
+                    
+                    
+                  </div>
+</div>
+
+                <div className="card">
+                  <div className="card-image2"></div>
+                    <div className="card-text">
+                        <h2>Democrats</h2>
+                        <p>We are fighting for a better, fairer, and brighter future for every American: rolling up our sleeves, empowering grassroots voters, and organizing everywhere to take our country back.</p>
+                    </div>
+                  <div className="card-button2">
+                    <div className="stat">
+                      
+                        <button color="white" className="button" >Vote</button>
+                      
+                    </div>
+                    
+                    
+                  </div>
+</div>
             
-            </Area>
-
-            <Area alignX="right" alingY="center" >
-            
-            <Card>
-                    <Heading>Separatist</Heading>
-                    <Avatar.Image  source="https://www.fanthatracks.com/wp-content/uploads/2018/08/amidala_template_5.jpg" /> 
-                    <Paragraph>
-                    "It met all my criteria I wanted in an acceptance speech. The base is going to feel really good about it - to go vote and to take five people to the polls with them. It did what it was supposed to do. [in terms of swaying voters] It's up to the individual. Everybody has to do their own research."
-                    </Paragraph>
-
-
-
-                </Card>
-            
-            </Area>
-
+            </div>
         </Container>
+
+        </div>
     )
 })

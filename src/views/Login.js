@@ -3,7 +3,7 @@ import { tether, Heading, TextInput, Container, PasswordInput, Button, HelperTex
 import { Voter } from './Voter';
 
 
-export const Login = tether(function*({ Api }){
+export const Login = tether(function*({ Api, redirect }){
 
     const { Voter } = Api;
 
@@ -12,7 +12,8 @@ export const Login = tether(function*({ Api }){
         lastName:  '',
         votersNumber: '',
         password: '',
-        errorMessage: null
+        errorMessage: null,
+        username: ''
     }
     return (
         <Container>
@@ -53,6 +54,21 @@ export const Login = tether(function*({ Api }){
             <HelperText type="error" visible={form.errorMessage !== null}>
                 {form.errorMessage}
             </HelperText>
+                            
+            <Container>
+              <Heading>Login</Heading>
+              <TextInput
+                    label="Username"
+                    value={form.username}
+                    onChange={value => form.username = value}
+              />
+              <Button onPress={async () => {
+                  await Voter.login(form.username)
+                  redirect('/welcome')
+                  }}> 
+                Login
+              </Button>
+          </Container>
         </Container>
     )
 })

@@ -1,0 +1,117 @@
+.wrapper {
+  background-color: rgb(179, 177, 177);
+}
+
+.vote-container {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: rgb(218, 216, 216);
+  width: 88.2%;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+/* .card {
+  width: 300px;
+  margin-top: 150px;
+} */
+
+.card {
+  display: grid;
+  width: 321px;
+  grid-template-columns: 320px;
+  grid-template-rows: 250px 220px 80px;
+  grid-template-areas: "image" "text" "stats";
+  border-width: 1px;
+  border-color: black;
+  border-radius: 18px;
+  background: rgb(255, 255, 255);
+  font-family: roboto;
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.card-text {
+  grid-area: text;
+  background-color: rgb(255, 255, 255);
+  text-align: justify;
+  padding: 10px;
+}
+.card-text h2 {
+  text-align: center;
+}
+.card-button {
+  grid-area: stats;
+}
+
+.card-image {
+  background-image: url("https://cdn.theatlantic.com/thumbor/2FhO-RIr9YO38oafwgWloiLlvZo=/615x451/media/img/liveblog/2017/01/RTSXQ41/original.jpg");
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-size: 320px 310px;
+  background-repeat: no-repeat;
+}
+
+.card-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background: rgb(243, 51, 26);
+}
+
+.card-image2 {
+  background-image: url("https://bostonglobe-prod.cdn.arcpublishing.com/resizer/8QVeJCFvK1RkqRl5cRw25wfwvSA=/1440x0/cloudfront-us-east-1.images.arcpublishing.com/bostonglobe/ERCANJS2WHQYQS5UQGK2VXT5VQ.jpg");
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-size: 320px 310px;
+  background-repeat: no-repeat;
+}
+
+.card-button2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background: rgb(26, 102, 243);
+}
+
+.stat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  width: 160px;
+  height: 50px;
+  border-radius: 20px;
+  background-color: #fffffffb;
+  font-weight: 600;
+  border-color: rgb(0, 0, 0);
+}
+
+.vote-image {
+  display: flex;
+  height: 300px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  background-blend-mode: hard-light;
+  background-attachment: fixed;
+}
+
+.vote-title {
+  position: absolute;
+  left: 90px;
+}
