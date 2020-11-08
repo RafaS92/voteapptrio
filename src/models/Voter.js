@@ -1,14 +1,39 @@
 import { Resource } from '@triframe/core'
-import { include, Model, string, integer} from '@triframe/scribe'
+import { include, Model, string, hasMany, session} from '@triframe/scribe'
 
 export class Voter extends Resource {
     @include(Model)
 
-    @string firstName = ""
-    @string lastName = ""
-    @integer votersNumber = 0
-    @string password= ""
+    @hasMany
+    votes = []
+
+    @string
+    firstname = ""
+
+    @string
+    lastname = ""
+
+    
+
+    @string
+    password = ""
+
+    @string
+    username = ""
+
+    @session
+    static async login(session, inputUsername){
+        let [voter] = await Voter.where({username: inputUsername})
+
+        session.loggedInUserId = voter.id
+        return null
+    }
+
+    @session
+    static current(session){
+        return Voter.read(session.loggedInUserId)
+    }
+
+    
 
 }
-
-
