@@ -1,14 +1,18 @@
 import React from 'react';
-import { tether, Heading, TextInput, Container, PasswordInput, Button } from '@triframe/designer';
+import { tether, Heading, TextInput, Container, PasswordInput, Button, HelperText } from '@triframe/designer';
+import { Voter } from './Voter';
 
 
-export const Login = tether(function*(){
+export const Login = tether(function*({ Api }){
+
+    const { Voter } = Api;
 
     const form = yield {
         firstName: '',
         lastName:  '',
         votersNumber: '',
-        password: ''
+        password: '',
+        errorMessage: null
     }
     return (
         <Container>
@@ -38,10 +42,17 @@ export const Login = tether(function*(){
             />
 
             <Button onPress={async () => {
-                
+                try{
+                    await Voter.login(form.votersNumber, form.password)
+                }catch(error){
+                    form.errorMessage = error.message;
+                }
             }}>
                 Login 
             </Button>
+            <HelperText type="error" visible={form.errorMessage !== null}>
+                {form.errorMessage}
+            </HelperText>
         </Container>
     )
 })
