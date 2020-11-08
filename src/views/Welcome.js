@@ -1,24 +1,34 @@
 import React from 'react'
-import {tether, Container, Heading, Button, TextInput, redirect} from '@triframe/designer'
+import {tether, Container, Heading, Button, TextInput, redirect, session} from '@triframe/designer'
+import {when, otherwise } from '@triframe/confectioner'
 
 
 
 export const Welcome = tether(function*({Api, redirect}){
 
-    const {Voter} = Api
+    const {Vote} = Api
 
     const form = yield {
         username: ''
     }
 
+
   return(
       <Container>
           <Heading>Hello! Would you like to vote in this current election?</Heading>
           <Button onPress={async () => {
-              redirect('/candidates')
+              {when(Vote.findVote == true, ()=> (
+                redirect('/alreadyVoted')
+                ), otherwise(()=>(
+                    redirect('/candidates')
+                ))
+            )}
           }}
           >Yes</Button>
-          <Button>No</Button>
+          <Button onPress={async () => {
+              
+            redirect('/thankyou')
+          }}>No</Button>
       </Container>
   )  
 })
