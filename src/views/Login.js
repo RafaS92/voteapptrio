@@ -5,9 +5,9 @@ import { tether, Heading, TextInput, Container, PasswordInput, Button } from '@t
 export const Login = tether(function*(){
 
     const form = yield {
-        firstname: '',
-        lastname:  '',
-        voterNumber: '',
+        firstName: '',
+        lastName:  '',
+        votersNumber: '',
         password: ''
     }
     return (
@@ -25,7 +25,7 @@ export const Login = tether(function*(){
 
             <TextInput 
                 label="Voter Number"
-                value={FormData.voterNumber}
+                value={FormData.votersNumber}
             />
 
             <PasswordInput 
