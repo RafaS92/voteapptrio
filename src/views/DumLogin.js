@@ -12,11 +12,13 @@ export const DumLogin= tether(function*({Api, redirect}){
         username: ''
     }
 
-  return(
+  return(   
+
+    
 
     <div className="login-wrapper ">
 
-        <div >
+       
        
           <div className="form-container">
           <h2 className="login-form-head">Login</h2>
@@ -42,7 +44,7 @@ export const DumLogin= tether(function*({Api, redirect}){
           </div>
           </div>
       
-    </div>
+   
   )  
 })
 
