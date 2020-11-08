@@ -15,25 +15,31 @@ export const Login = tether(function*(){
             <Heading>Login To Vote</Heading>
             <TextInput 
                 label="First Name"
-                value={FormData.firstname}
+                value={FormData.firstName}
+                onChange={value => form.firstName = value}
             />
 
             <TextInput 
                 label="Last Name"
-                value={FormData.lastname}
+                value={FormData.lastName}
+                onChange={value => form.lastName = value}
             />
 
             <TextInput 
                 label="Voter Number"
                 value={FormData.votersNumber}
+                onChange={value => form.votersNumber = value}
             />
 
             <PasswordInput 
                 label="Password"
                 value={FormData.password}
+                onChange={value => form.password = value}
             />
 
-            <Button>
+            <Button onPress={async () => {
+                
+            }}>
                 Login 
             </Button>
         </Container>
