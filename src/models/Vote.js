@@ -1,13 +1,17 @@
+
 import { Resource } from '@triframe/core'
-import { include, Model, string , integer } from '@triframe/scribe'
+import { belongsTo, include, Model, string , integer, } from '@triframe/scribe'
 
 export class Vote extends Resource {
     @include(Model)
 
-    @string voter = ""
+    @string 
+    candidate = ""
 
-    @string candidate = ""
+    @belongsTo
+    voter = null
 
-    @integer year = 0
+    @integer 
+    year = 0
 
 }

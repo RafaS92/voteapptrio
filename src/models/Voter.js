@@ -1,6 +1,6 @@
 import { Resource } from '@triframe/core'
-import { include, Model, string, integer, session} from '@triframe/scribe'
 import { compare } from 'bcrypt';
+import { include, Model, string, integer, hasMany, session} from '@triframe/scribe'
 
 export class Voter extends Resource {
     @include(Model)
@@ -25,6 +25,36 @@ export class Voter extends Resource {
         return true
     }
 
+    @hasMany
+    votes = []
+
+    @string
+    firstname = ""
+
+    @string
+    lastname = ""
+
+    
+
+    @string
+    password = ""
+
+    @string
+    username = ""
+
+    @session
+    static async login(session, inputUsername){
+        let [voter] = await Voter.where({username: inputUsername})
+
+        session.loggedInUserId = voter.id
+        return null
+    }
+
+    @session
+    static current(session){
+        return Voter.read(session.loggedInUserId)
+    }
+
+    
+
 }
-
-
