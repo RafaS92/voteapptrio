@@ -52,7 +52,7 @@ export const DumLogin= tether(function*({Api, redirect}){
                 onChange={value => form.password = value}
             />
 
-            <Button onPress={async () => {
+            <Button color="blue" onPress={async () => {
                 try{
                     await Voter.login(form.firstname, form.password)
                     redirect('/welcome')

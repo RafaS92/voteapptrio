@@ -11,10 +11,10 @@ export const ThanksVote = tether(function*({redirect}){
         
         <Container>
            
-        <Heading>We sorry</Heading>
-        <Text>You already vote for this election.</Text>
+        <Heading>Thank you for vote!</Heading>
+        <Text>Your vote have been registered.</Text>
         <Area inline  alignX="left">
-            <Button icon="logout" color="red"  onPress={() => redirect('/vote')} >
+            <Button icon="logout" color="red"  onPress={() => redirect('/')} >
                 Logout
             </ Button >
         </Area>

@@ -48,7 +48,7 @@ export const DumWelcome = tether(function*({Api, redirect}){
             </div>
                  <div className="question-container">
                  <Heading>Hello! Would you like to vote now?</Heading>
-                    <Button onPress={async () => {
+                    <Button color="blue" onPress={async () => {
                         redirect('/vote')
                     }}
                     >Yes</Button>
