@@ -1,3 +1,8 @@
+/* candidates */
+* {
+  scroll-behavior: smooth;
+}
+
 .wrapper {
   background-color: rgb(179, 177, 177);
 }
@@ -6,18 +11,13 @@
   display: flex;
   justify-content: space-evenly;
   background-color: rgb(218, 216, 216);
-  width: 88.2%;
+  width: 86.6%;
   margin-left: auto;
   margin-right: auto;
   height: auto;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
 }
-
-/* .card {
-  width: 300px;
-  margin-top: 150px;
-} */
 
 .card {
   display: grid;
@@ -42,6 +42,9 @@
   padding: 10px;
 }
 .card-text h2 {
+  text-align: center;
+}
+.card-text h3 {
   text-align: center;
 }
 .card-button {
@@ -114,4 +117,135 @@
 .vote-title {
   position: absolute;
   left: 90px;
+}
+
+/* login */
+
+.login-wrapper {
+  background-image: url("https://styledme.com/wp-content/uploads/2020/09/vote-zoom-background.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login-image {
+  display: flex;
+  width: 70%;
+  height: 330px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-container {
+  width: 330px;
+  height: 280px;
+  background-color: rgba(255, 255, 255, 0.74);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 400px;
+  border: 2px solid #000000;
+  padding: 5px;
+}
+
+.login-form-head {
+  display: flex;
+  justify-content: center;
+}
+
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(243, 243, 243);
+  width: 86.6%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 1050px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+.welcome-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #0ba6c5;
+}
+
+.welcome-image {
+  height: 400px;
+  width: 300px;
+}
+
+.welcome-text {
+  font-size: 20px;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+}
+
+.question-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 0px;
+}
+
+.result-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: 2px solid #000000;
+  width: 300px;
+  margin-bottom: 30px;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(250, 58, 44, 0.432);
+  border-radius: 25px;
+}
+
+.result-container h3 {
+  position: relative;
+  top: -15px;
+}
+
+.result-container strong {
+  position: relative;
+  top: -15px;
+}
+
+.image-top {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  height: 150px;
+  width: 250px;
+  border-radius: 100px;
+}
+
+.intro-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.message-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 300px;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(110, 110, 110, 0.315);
+  text-align: center;
+  height: 180px;
+  width: 300px;
 }

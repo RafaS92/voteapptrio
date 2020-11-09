@@ -44,6 +44,7 @@ export class Voter extends Resource {
         return true
     }
 
+
     @session
     @stream
     static *current(session){
@@ -53,4 +54,10 @@ export class Voter extends Resource {
                 : null
         )
     }
+
+    yell(){
+        console.log("I am yelling")
+    }
+
+
 }
