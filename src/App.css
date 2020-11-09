@@ -249,3 +249,7 @@
   height: 180px;
   width: 300px;
 }
+
+.card-button2 a :hover {
+  cursor: pointer;
+}

@@ -27,8 +27,10 @@ export const Vote = tether(function*(){
                         </div>
                     <div className="card-button">
                         <div className="stat">
-                        
+                            <a href="http://localhost:8081/thanksvote ">
+
                             <button color="white" className="button" >Vote</button>
+                            </a>
                         
                         </div>
                         
@@ -45,9 +47,10 @@ export const Vote = tether(function*(){
                         </div>
                     <div className="card-button2">
                         <div className="stat">
-                        
+                        <a href="http://localhost:8081/thanksvote ">
+
                             <button color="white" className="button" >Vote</button>
-                        
+                            </a>    
                         </div>
                         
                         
