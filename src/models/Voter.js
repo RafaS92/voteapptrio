@@ -1,5 +1,6 @@
 import { Resource } from '@triframe/core'
-import { include, Model, string, hasMany, session} from '@triframe/scribe'
+import { compare, hash } from 'bcrypt';
+import { include, Model, string, integer, hasMany, session, stream } from '@triframe/scribe'
 
 export class Voter extends Resource {
     @include(Model)
@@ -13,29 +14,50 @@ export class Voter extends Resource {
     @string
     lastname = ""
 
-    
+    @integer
+    votersNumber = 0
 
     @string
-    password = ""
+    passwordDigest = ""
 
     @string
     username = ""
 
-    @session
-    static async login(session, inputUsername){
-        let [voter] = await Voter.where({username: inputUsername})
 
-        session.loggedInUserId = voter.id
-        return null
+    static async register(firstname, lastname, votersNumber){
+        let passwordDigest = await hash('123', 10)
+        return Voter.create({ firstname: firstname, passwordDigest: passwordDigest, lastname: lastname, votersNumber:votersNumber })
+    }
+    
+    @session
+    static async login( session, firstname, password) {
+        let [ voter ] = await Voter.where({firstname: firstname});
+
+        if (voter == undefined) {
+            throw Error(`Could not find user with that name`);
+        }
+
+        if (!await compare(password, voter.passwordDigest)) {
+            throw Error(`Incorrect Password`);
+        }
+        session.loggedInUserId = voter.id 
+        return true
     }
 
+
     @session
-    static current(session){
-        return Voter.read(session.loggedInUserId)
+    @stream
+    static *current(session){
+        return (
+            session.loggedInUserId !== null
+                ? yield Voter.read(session.loggedInUserId)
+                : null
+        )
     }
 
     yell(){
         console.log("I am yelling")
     }
+
 
 }
